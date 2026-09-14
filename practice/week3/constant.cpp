@@ -1,4 +1,4 @@
-// 상수(constant) 연습: symbolic 상수(#define), literal 상수, const 상수
+// 2026-09-14
 #include <iostream>
 #define PI 3.14159265359      // PI가 기호(symbolic) 상수
 using namespace std;

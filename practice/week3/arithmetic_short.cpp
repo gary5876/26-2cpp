@@ -1,4 +1,4 @@
-// 사칙연산 축약식(+=) 연습
+// 2026-09-14
 #include <iostream>
 using namespace std;
 

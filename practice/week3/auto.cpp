@@ -1,4 +1,4 @@
-// auto 키워드: 컴파일러가 변수/반환형의 자료형을 자동으로 추론(automatic type deduction)
+// 2026-09-14
 #include <iostream>
 using namespace std;
 

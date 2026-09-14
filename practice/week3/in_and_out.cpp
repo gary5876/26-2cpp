@@ -1,4 +1,4 @@
-// 입출력 함수(cin, cout) 연습: 이름을 입력받아서 출력하기
+// 2026-09-14
 #include <iostream>
 #include <string>
 using namespace std;

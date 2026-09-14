@@ -1,4 +1,4 @@
-// sizeof 연산자로 자료형의 크기(byte) 확인하기
+// 2026-09-14
 #include <iostream>
 using namespace std;
 

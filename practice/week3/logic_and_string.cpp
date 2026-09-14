@@ -1,4 +1,4 @@
-// 논리형(bool)과 문자열(string) 비교 연습
+// 2026-09-14
 #include <iostream>
 #include <string>
 using namespace std;
