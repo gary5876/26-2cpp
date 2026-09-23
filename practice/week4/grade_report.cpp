@@ -1,27 +1,37 @@
 // 2026-09-23
-// 학생들의 성적을 2차원 배열에 저장하고 과목별 평균을 구하는 프로그램
+// 학생들의 성적을 2차원 배열에 저장하고 평균 점수를 구하는 프로그램
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    const int STUDENTS = 3; // 학생 수 (행)
-    const int SUBJECTS = 3; // 과목 수 (열)
-    string subjects[SUBJECTS] = {"국어", "영어", "수학"};
-    int scores[STUDENTS][SUBJECTS] = {
-        {85, 90, 78},
-        {92, 88, 95},
-        {76, 85, 89}
-    };
+    const int STUDENT = 5;
+    const int SUBJECT = 3;
+    int scores[STUDENT][SUBJECT];
+    string studentNames[STUDENT]
+        = {"영수", "영희", "철수", "미미", "쥬쥬"};
+    string subjectNames[SUBJECT]
+        = {"수학", "영어", "CPP"};
 
-    for (int j = 0; j < SUBJECTS; j++) {
-        int sum = 0;
-        for (int i = 0; i < STUDENTS; i++) {
-            sum += scores[i][j];
+    for (int i = 0; i < STUDENT; i++) {
+        cout << studentNames[i]
+             << "의 성적을 하나씩 입력하세요." << endl;
+        for (int j = 0; j < SUBJECT; j++) {
+            cout << subjectNames[j] << ":";
+            cin >> scores[i][j];
         }
-        double average = (double)sum / STUDENTS; // 평균은 실수로 출력
-        cout << subjects[j] << " 평균: " << average << endl;
     }
 
+    for (int i = 0; i < STUDENT; i++) {
+        cout << studentNames[i] << "의 평균 점수는 ";
+        double sum = 0;
+        double average = 0;
+        for (int j = 0; j < SUBJECT; j++) {
+            sum += scores[i][j];
+        }
+        average = sum / SUBJECT;
+        cout << average << "입니다" << endl;
+    }
     return 0;
 }

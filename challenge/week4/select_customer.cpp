@@ -1,34 +1,42 @@
 // 2026-09-23
 // 고객 정보를 입력받고, 특정 나이 이상의 고객을 출력하는 프로그램
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main()
-{
-    const int CUSTOMERS = 5; // 고객 수
-    string names[CUSTOMERS]; // 고객 이름
-    int ages[CUSTOMERS]; // 고객 나이
-    int ageThreshold = 30; // 기준 나이
-    bool found = false; // 기준 나이보다 많은 고객이 있는지
+int main() {
+    int maxPeople;
+    cout << "총 고객의 수를 입력하라: ";
+    cin >> maxPeople;
+    string names[maxPeople];
+    int ages[maxPeople];
 
-    // 고객의 이름과 나이를 입력받는 코드
-    for (int i = 0; i < CUSTOMERS; i++) {
-        cout << i + 1 << "번 고객의 이름과 나이를 입력하시오: ";
-        cin >> names[i] >> ages[i];
+    // 고객의 이름과 나이를 입력 받는 코드
+    for (int i = 0; i < maxPeople; i++) {
+        cout << "사람 " << i + 1 << "의 이름: ";
+        cin >> names[i];
+        cout << "사람 " << i + 1 << "의 나이: ";
+        cin >> ages[i];
     }
 
-    // ageThreshold보다 나이가 많은 고객 이름 (나이) 출력
-    cout << ageThreshold << "세 이상의 고객:" << endl;
-    for (int i = 0; i < CUSTOMERS; i++) {
+    int ageThreshold;
+    cout << "특정 나이 이상인 사람을 찾으려면 나이를 입력하세요: ";
+    cin >> ageThreshold;
+
+    // ageThreshold보다 나이가 많은 고객 이름 (나이) 출력 코드
+    cout << ageThreshold << "세 이상인 고객들:\n";
+    int detectedPeople = 0;
+    for (int i = 0; i < maxPeople; i++) {
         if (ages[i] >= ageThreshold) {
-            cout << names[i] << " (" << ages[i] << ")" << endl;
-            found = true;
+            cout << names[i] << " (" << ages[i] << "세)\n";
+            detectedPeople++;
         }
     }
 
-    // 특정 나이보다 많은 고객이 없는 경우 메시지 출력
-    if (!found)
-        cout << ageThreshold << "세 이상의 고객이 없습니다." << endl;
+    // 특정 나이보다 많은 고객이 없는 경우 메시지 출력 코드
+    if (detectedPeople == 0) {
+        cout << ageThreshold << "이상의 나이를 가진 고객이 없습니다" << endl;
+    }
 
     return 0;
 }
