@@ -8,7 +8,7 @@ int main() {
     int numCell = 10;
     int numList[numCell][numCell];
 
-    // 2차원 배열에 난수 저장하는 코드 (이중 for문)
+    // 2차원 배열에 1000 미만의 난수 저장하는 코드 (이중 for문)
     for (int i = 0; i < numCell; i++) {
         for (int j = 0; j < numCell; j++) {
             int elem = rand() % 1000;
