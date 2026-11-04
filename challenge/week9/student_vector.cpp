@@ -7,25 +7,25 @@ using namespace std;
 int main(void)
 {
     vector<int> scores; // 크기 미지정
-    int score;
+    int sum = 0;
 
     while (true) {
+        int score;
         cout << "성적을 입력하시오(종료는 -1) : ";
         cin >> score;
-        if (score == -1)
-            break;
+        if (score == -1) break;
         scores.push_back(score);
     }
 
-    if (scores.empty()) { // 0으로 나누기 방지
+    if (scores.empty()) { // 0 나누기 방지
         cout << "입력된 성적 없음" << endl;
         return 0;
     }
 
-    int sum = 0;
-    for (int s : scores)
-        sum += s;
+    for (auto& value : scores)
+        sum += value;
+    double avg = (double)sum / scores.size();
+    cout << "성적 평균=" << avg << endl;
 
-    cout << "성적 평균=" << (double)sum / scores.size() << endl;
     return 0;
 }
